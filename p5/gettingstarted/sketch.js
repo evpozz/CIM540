@@ -43,6 +43,7 @@ function draw() {
   strokeWeight(1);
   fill("white");
   rect(centerX -150,centerY -100,100,100);
+
   // eye1
   var xOffset = map(mouseX, 0, width, -20,20);
   console.log("xOffset: " + xOffset + " yOffset: " + yOffset);
