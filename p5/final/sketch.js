@@ -35,7 +35,7 @@ function setup() {
   htmlBack = select("body");
 
   sel60 = createSelect();
-  sel60.position(300, 100);
+  sel60.position(300, 125);
   sel60.option('select a 60s song');
   sel60.option('Brown Eyed Girl');
   sel60.option('Hit The Road Jack');
@@ -46,7 +46,7 @@ function setup() {
   sel60.hide();
 
   sel70 = createSelect();
-  sel70.position(300, 100);
+  sel70.position(300, 125);
   sel70.option('select a 70s song');
   sel70.option('September');
   sel70.option('Rocket Man');
@@ -57,11 +57,11 @@ function setup() {
   sel70.hide();
 
   sel80 = createSelect();
-  sel80.position(300, 100);
+  sel80.position(300, 125);
   sel80.option('select an 80s song');
   sel80.option('Billie Jean');
-  sel80.option('Dont Stop Believin');
-  sel80.option('Sweet Child OMine');
+  sel80.option('Dont Stop Believing');
+  sel80.option('Sweet Child O Mine');
   sel80.option('Walking On Sunshine');
   sel80.option('Kiss');
   sel80.changed(mySelectEvent);
@@ -84,8 +84,10 @@ function mousePressed(){
   var rec1Dist = dist(mouseX,mouseY,185, 175);
   if(rec1Dist < 175){
     spotify.html(record1Spotify);
-    htmlBack.style("background-color", "pink");
-    background("pink");
+    htmlBack.style("background-color", "#538ac8");
+    background("#538ac8");
+    textFont('Lato');
+    textSize(14);
     sel60.show();
     sel70.hide();
     sel80.hide();
@@ -94,8 +96,10 @@ function mousePressed(){
   var rec2Dist = dist(mouseX,mouseY,185, 475);
   if(rec2Dist < 175){
     spotify.html(record2Spotify);
-    htmlBack.style("background-color", "orange");
-    background("orange");
+    htmlBack.style("background-color", "#ca5050");
+    background("#ca5050");
+    textFont('Lato');
+    textSize(14);
     sel60.hide();
     sel70.show();
     sel80.hide();
@@ -104,8 +108,10 @@ function mousePressed(){
   var rec3Dist = dist(mouseX,mouseY,185, 700);
   if(rec3Dist < 175){
     spotify.html(record3Spotify);
-    htmlBack.style("background-color", "yellow");
-    background("yellow");
+    htmlBack.style("background-color", "#5cbe85");
+    background("#5cbe85");
+    textFont('Lato');
+    textSize(14);
     sel60.hide();
     sel70.hide();
     sel80.show();
@@ -117,7 +123,7 @@ function mySelectEvent() {
   var item = sel60.value();
 
   if(item == "Brown Eyed Girl"){
-      background("pink")
+      background("#538ac8")
       songLyrics = "Hey, where did we go\
        Days when the rains came ? Down in the hollow\
        Playing a new game,\
@@ -140,8 +146,8 @@ function mySelectEvent() {
        ";
     }
 
-  if(item == "Hit The Road Jack"){
-      background("pink")
+    if(item == "Hit The Road Jack"){
+      background("#538ac8")
       songLyrics = "Hit the road Jack and don't you come back no more, no more, no more, no more.\
       Hit the road Jack and don't you come back no more. (What you say?)\
       Hit the road Jack and don't you come back no more, no more, no more, no more.\
@@ -174,8 +180,8 @@ function mySelectEvent() {
       Don't you come back no more}";
     }
 
-  if(item == "My Girl"){
-      background("pink")
+    if(item == "My Girl"){
+      background("#538ac8")
       songLyrics = "\
        I've got sunshine on a cloudy day.\
        When it's cold outside I've got the month of May.\
@@ -217,8 +223,8 @@ function mySelectEvent() {
        My girl\
        As long as I can talk about my girl..."}
 
-  if(item == "Sweet Caroline"){
-      background("pink")
+    if(item == "Sweet Caroline"){
+      background("#538ac8")
       songLyrics = "Where it began\
       I can't begin to knowin'\
       But then I know it's growing strong\
@@ -262,8 +268,8 @@ function mySelectEvent() {
       Good times never seemed so good\
       ";}
 
-  if(item == "I Heard It Through The Grapevine"){
-      background("pink")
+    if(item == "I Heard It Through The Grapevine"){
+      background("#538ac8")
       songLyrics = "\
       I bet you're wonderin' how I knew\
       'Bout your plans to make me blue\
@@ -320,7 +326,7 @@ function mySelectEvent() {
   var item = sel70.value();
 
     if(item == "September"){
-      background("orange")
+      background("#ca5050")
       songLyrics = "\
       Do you remember the\
       21st night of September?\
@@ -384,7 +390,7 @@ function mySelectEvent() {
     }
 
     if(item == "Rocket Man"){
-      background("orange")
+      background("#ca5050")
       songLyrics = "\
       She packed my bags last night pre-flight\
       Zero hour nine A.M.\
@@ -434,7 +440,7 @@ function mySelectEvent() {
     }
 
     if(item == "Stairway To Heaven"){
-      background("orange")
+      background("#ca5050")
       songLyrics = "There's a lady who's sure all that glitters is gold\
       And she's buying a stairway to heaven.\
       When she gets there she knows, if the stores are all closed\
@@ -487,7 +493,7 @@ function mySelectEvent() {
     }
 
     if(item == "Listen To The Music"){
-      background("orange")
+      background("#ca5050")
       songLyrics = "Don't you feel it growin', day by day\
       People gettin' ready for the news\
       Some are happy, some are sad\
@@ -533,7 +539,7 @@ function mySelectEvent() {
     }
 
     if(item == "American Pie"){
-      background("orange")
+      background("#ca5050")
       songLyrics = "\
       A long, long time ago\
       I can still remember how that music used to make me smile\
@@ -682,61 +688,100 @@ function mySelectEvent() {
   var item = sel80.value();
 
     if(item == "Billie Jean"){
-      background("yellow")
-      songLyrics = "Just a small town girl\
-      Livin' in a lonely world\
-      She took the midnight train goin' anywhere\
+      background("#5cbe85")
+      songLyrics = "She was more like a beauty queen\
+      From a movie scene\
+      I said, Don't mind, but what do you mean\
+      I am the one\
+      Who will dance on the floor in the round?\
+      She said I am the one\
+      Who will dance on the floor in the round\
       \
-      Just a city boy\
-      Born and raised in South Detroit\
-      He took the midnight train goin' anywhere\
+      She told me her name was Billie Jean\
+      As she caused a scene\
+      Then every head turned with eyes that dreamed of being the one\
+      Who will dance on the floor in the round\
       \
-      A singer in a smokey room\
-      The smell of wine and cheap perfume\
-      For a smile they can share the night\
-      It goes on and on, and on, and on\
+      People always told me, Be careful of what you do.\
+      And dont go around breaking young girls hearts.\
+      And mother always told me, A be careful of who you love,\
+      And be careful of what you do\
+      Cause the lie becomes the truth.\
       \
-      Strangers waiting\
-      Up and down the boulevard\
-      Their shadows searching in the night\
+      Billie Jean is not my lover\
+      Shes just a girl who claims that I am the one\
+      But the kid is not my son\
+      She says I am the one\
+      But the kid is not my son\
       \
-      Streetlights people\
-      Livin' just to find emotion\
-      Hidin' somewhere in the night\
+      For forty days and for forty nights\
+      Law was on her side\
+      But who can stand\
+      When shes in demand\
+      Her schemes and plans\
+      Cause we danced on the floor in the round\
+      So take my strong advice\
+      Just remember to always think twice\
+      (Do think twice, do think twice.)\
       \
-      Workin' hard to get my fill\
-      Everybody wants a thrill\
-      Payin' anything to roll the dice just one more time\
+      She told, My baby, wed danced til three.\
+      Then she looked at me\
+      Then showed a photo of a baby cry\
+      His eyes looked like mine, oh, no\
+      Do a dance on the floor in the round, baby\
       \
-      Some will win, some will lose\
-      Some were born to sing the blues\
-      Oh, the movie never ends\
-      It goes on and on, and on, and on\
+      A-people always told me, Be careful of what you do\
+      And dont go around breaking young girls hearts.\
+      (Dont break no heart.)\
+      A-but she came and stood right by me\
+      And just the smell of sweet perfume\
+      And this happened much too soon\
+      And she called me to her room\
       \
-      Strangers waiting\
-      Up and down the boulevard\
-      Their shadows searching in the night\
+      Billie Jean is not my lover\
+      Shes just a girl who claims that I am the one\
+      But the kid is not my son\
+      (No, no, no, no, no, no, no, no.)\
+      Billie Jean is not my lover\
+      Shes just a girl who claims that I am the one\
+      But the kid is not my son\
+      She says I am the one\
+      But the kid is not my son\
       \
-      Streetlights people\
-      Livin' just to find emotion\
-      Hidin' somewhere in the night\
+      She says I am the one\
+      But the kid is not my son\
       \
-      Don't stop believin'\
-      Hold on to that feelin'\
-      Streetlight people\
+      No, no, no\
       \
-      Don't stop believin'\
-      Hold on\
-      Streetlight people\
+      Billie Jean is not my lover\
+      Shes just a girl who claims that I am the one\
+      (No, theres not me, baby.)\
+      But the kid is not my son\
+      (No, no, no, no, no, no, no.)\
+      She says I am the one (No, babe.)\
+      But the kid is not my son, no, no, no\
       \
-      Don't stop believin'\
-      Hold on to that feelin'\
-      Streetlight people\
-      "
+      She says I am the one\
+      You know what you did\
+      She says he is my son\
+      Breaking my heart, babe\
+      She says I am the one\
+      \
+      Billie Jean is not my lover\
+      Billie Jean is not my lover\
+      Billie Jean is not my lover\
+      She is the one\
+      Billie Jean is not my lover\
+      She is the one\
+      Dont call me Billie Jean\
+      She is the one\
+      Billie Jean is not my lover\
+      She is the one\
+      Billie Jean is not my lover";
     }
 
-    if(item == "Don't Stop Believin"){
-      background("yellow")
+    if(item == "Dont Stop Believing"){
+      background("#5cbe85")
       songLyrics = "Just a small town girl\
       Livin' in a lonely world\
       She took the midnight train goin' anywhere\
@@ -789,7 +834,7 @@ function mySelectEvent() {
     }
 
     if(item == "Sweet Child O Mine"){
-      background("yellow")
+      background("#5cbe85")
       songLyrics = "She's got a smile that it seems to me\
       Reminds me of childhood memories\
       Where everything\
@@ -850,7 +895,7 @@ function mySelectEvent() {
     }
 
     if(item == "Walking On Sunshine"){
-      background("yellow")
+      background("#5cbe85")
       songLyrics = "Ow\
       \
       Mm, yeah\
@@ -918,7 +963,7 @@ function mySelectEvent() {
     }
 
     if(item == "Kiss"){
-      background("yellow")
+      background("#5cbe85")
       songLyrics = "You don't have to be beautiful\
       To turn me on\
       I just need your body baby\
