@@ -17,6 +17,12 @@ var sel80;
 
 var songLyrics = "";
 
+var recordSize = 200;
+
+var recordOffset = 210;
+
+var recordXoffset = 10;
+
 
 function preload() {
   record1 = loadImage("assets/record1.png");
@@ -26,9 +32,9 @@ function preload() {
 
 function setup() {
   // put setup code here
-  var myCanvas = createCanvas(600, 1200);
+  //var myCanvas = createCanvas(700, 1200);
+  var myCanvas = createCanvas(700, 1200);
   myCanvas.parent('can');
-
   spotify = select("#spotify");
 
 
@@ -68,20 +74,21 @@ function setup() {
   sel80.hide();
 }
 
-function draw() {
-  // put drawing code here
-  background(255,255,255,0);
-  image(record1,10,0);
-  image(record2,10,260);
-  image(record3,10,520);
-  fill("black");
-  text(songLyrics, 300, 50, 250, 1200);
 
+function draw() {
+  background("#aaaaaa");
+  htmlBack.style("background-color", "#aaaaaa");
+  image(record1,recordXoffset,0, recordSize, recordSize);
+  image(record2,recordXoffset,recordOffset, recordSize, recordSize);
+  image(record3,recordXoffset,recordOffset*2, recordSize, recordSize);
+  fill("black");
+  text(songLyrics, 300, 50, 400, 1200);
 }
 
-function mousePressed(){
 
-  var rec1Dist = dist(mouseX,mouseY,185, 175);
+function mousePressed(){
+  songLyrics = "";
+  var rec1Dist = dist(mouseX,mouseY,recordSize/2 + recordXoffset, recordSize/2);
   if(rec1Dist < 175){
     spotify.html(record1Spotify);
     htmlBack.style("background-color", "#538ac8");
@@ -93,7 +100,7 @@ function mousePressed(){
     sel80.hide();
   }
 
-  var rec2Dist = dist(mouseX,mouseY,185, 475);
+  var rec2Dist = dist(mouseX,mouseY,recordSize/2 + recordXoffset, (recordSize/2) + recordOffset);
   if(rec2Dist < 175){
     spotify.html(record2Spotify);
     htmlBack.style("background-color", "#ca5050");
@@ -105,7 +112,7 @@ function mousePressed(){
     sel80.hide();
   }
 
-  var rec3Dist = dist(mouseX,mouseY,185, 700);
+  var rec3Dist = dist(mouseX,mouseY,recordSize/2 + recordXoffset, (recordSize/2) + recordOffset*2);
   if(rec3Dist < 175){
     spotify.html(record3Spotify);
     htmlBack.style("background-color", "#5cbe85");
