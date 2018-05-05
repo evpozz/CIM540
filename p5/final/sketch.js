@@ -34,8 +34,8 @@ function setup() {
   // put setup code here
   //var myCanvas = createCanvas(700, 1200);
   var myCanvas = createCanvas(700, 1200);
-  //htmlBack.style("background-color", "#aaaaaa");
-  background("#aaaaaa");
+  htmlBack.style("background-color", "blue");
+  // background("blue");
   myCanvas.parent('can');
   spotify = select("#spotify");
 
